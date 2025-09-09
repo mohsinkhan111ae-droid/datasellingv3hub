@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Data Selling Hub — Pro UI</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title"><span class="icon">📈</span> Live Data Selling</div>
+      <div class="upi" id="header-upi">UPI: —</div>
+    </header>
+
+    <main class="container">
+      <section class="rate-card card">
+        <div class="rate-top">Rate: <strong>500 MB = ₹850</strong></div>
+        <div class="rate-sub">1 MB = ₹1.7 · Selling at <strong>10 MB/sec → ₹17/sec</strong></div>
+      </section>
+
+      <section class="stats">
+        <div class="card stat-card">
+          <div class="label">Session Data Sold</div>
+          <div class="big" id="mb-sold">0.0 <span class="unit">MB</span></div>
+        </div>
+        <div class="card stat-card">
+          <div class="label">Session Earnings</div>
+          <div class="big" id="earnings">₹0</div>
+        </div>
+      </section>
+
+      <section class="progress card">
+        <div class="label">Session Progress: <span id="progress-text">0%</span></div>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button class="btn start" id="start-btn">▶ Start Selling</button>
+        <button class="btn stop" id="stop-btn">⏹ Stop & Withdraw</button>
+      </section>
+
+      <section class="history card">
+        <div class="history-header">
+          <div>Withdrawal History</div>
+          <button id="clear-history" class="clear">Clear</button>
+        </div>
+        <div class="history-list" id="history-list">
+          <!-- history rows -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Withdrawal Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-body card">
+        <div class="modal-title">Enter UPI ID</div>
+        <div class="withdraw-amount" id="withdraw-amount">₹0</div>
+        <input id="user-upi" placeholder="example@upi" />
+        <div class="modal-actions">
+          <button id="modal-continue" class="btn modal-btn">Continue</button>
+          <button id="modal-cancel" class="btn modal-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+      <div class="modal-body success card">
+        <div class="success-icon">✔</div>
+        <div class="success-title">Withdrawal Successful!</div>
+        <div class="success-amount" id="success-amount">₹0</div>
+        <div class="txn">Transaction ID: <span id="success-txn">-</span></div>
+        <div class="modal-actions">
+          <button id="success-ok" class="btn modal-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">Made with ❤️ — Data Selling Hub</footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
